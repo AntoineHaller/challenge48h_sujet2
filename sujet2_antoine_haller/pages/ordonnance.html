@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Récupération de l'ordonnance</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <h1>GLOTH</h1>
+        </div>
+    </header>
+
+    <h3>Ordonnance:</h3>
+    <p>Nom du médecin : <span id="nom"></span></p>
+    <p>Prénom du médecin : <span id="prenom"></span></p>
+    <p>Téléphone du médecin : <span id="phone"></span></p>
+    <p>Id du médecin: <span id="id_medecin"></span></p>
+    <p>Contenu de l'ordonnance : <span id="content_ordo"></span></p>
+    <p>Date de création de l'ordonnnance: <span id="date"></span></p>
+    
+    <p>Mentions légales <a href="mentions.html">voir</a></p>
+    
+
+    <script> 
+        var today = new Date();
+        var jour = String(today.getDate()).padStart(2, '0');
+        var mois = String(today.getMonth() + 1).padStart(2, '0');
+        var annee = today.getFullYear();
+        var heure = String(today.getHours());
+        var minutes = String(today.getMinutes());
+
+        today = jour + '/' + mois + '/' + annee + " " + heure + ":" + minutes;
+            
+        document.getElementById("date").innerHTML = today; 
+
+        document.getElementById("nom").innerHTML = localStorage.getItem('nom');
+        document.getElementById("prenom").innerHTML = localStorage.getItem('prenom');
+        document.getElementById("phone").innerHTML = localStorage.getItem('phone');
+        document.getElementById("id_medecin").innerHTML = localStorage.getItem('id_medecin');
+        document.getElementById("content_ordo").innerHTML = localStorage.getItem('content_ordo');
+    </script> 
+</body>
+</html>

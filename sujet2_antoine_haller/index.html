@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Création de l'ordonnance</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <h1>GLOTH</h1>
+        </div>
+    </header>
+    
+    <div class="content">
+        <form action="pages/ordonnance.html" method="post">
+            <div>
+                <label for="nom">Nom du médecin :</label>
+                <input type="text" id="nom" >
+            </div>
+            <div>
+                <label for="prenom">Prénom du médecin :</label>
+                <input type="text" id="prenom">
+            </div>
+            <div>
+                <label for="phone">Numéro de téléphone :</label>
+                <input type="text" id="phone">
+            </div>
+            <div>
+                <label for="id_medecin">Numéro d'identification du médecin :</label>
+                <input type="text" id="id_medecin">
+            </div>
+            <div>
+                <label for="content_ordo">Corps de l'ordonnance :</label>
+                <textarea name="" id="content_ordo" cols="30" rows="10"></textarea>
+            </div>
+                <button onclick="myfunction()">Envoyer</button>
+            
+        </form>
+    </div>
+    <script>
+        function myfunction(){
+            localStorage.setItem('nom', document.getElementById("nom").value);
+            localStorage.setItem('prenom', document.getElementById("prenom").value);
+            localStorage.setItem('phone', document.getElementById("phone").value);
+            localStorage.setItem('id_medecin', document.getElementById("id_medecin").value);
+            localStorage.setItem('content_ordo', document.getElementById("content_ordo").value);
+        }
+    </script>
+</body>
+</html>
